@@ -9,6 +9,7 @@ class AInputField extends StatelessWidget {
     this.leading,
     this.trailing,
     this.trailingTapped,
+    this.keyboardType,
     this.password = false,
   }) : super(key: key);
 
@@ -22,11 +23,13 @@ class AInputField extends StatelessWidget {
   final bool password;
   final String placeholder;
   final Widget? trailing;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      keyboardType: keyboardType,
       style: const TextStyle(height: 1),
       obscureText: password,
       decoration: InputDecoration(
